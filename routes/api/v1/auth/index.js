@@ -11,4 +11,7 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', AUTH_CONTROLLER.login);
 
+router.post('/request-reset', AUTH_CONTROLLER.requestResetPassword);
+router.post('/reset-password', AUTH_CONTROLLER.resetPassword);
+
 module.exports = router;

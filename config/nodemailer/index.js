@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -9,7 +10,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendResetPasswordEmail = (email, token) => {
-    const resetLink = `http://localhost:5000/reset-password/${token}`;
+    const resetLink = `http://localhost:5000/api/v1/auth/reset-password/${token}`;
     return transporter.sendMail({
         to: email,
         subject: 'Reset Password',
